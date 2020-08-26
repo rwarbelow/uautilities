@@ -1,0 +1,9 @@
+- if !signed_in? 
+  a name=section_name 
+  .sticky-footer.textAlign--center.flex
+    div.contents
+      span.heading
+        | #{header}
+      = link_to "#{button_text}", cms_employer? ? auth_url('signup', auth_employer) : auth_url('signup'), class: 'button trackable', id: 'stickyFooterSignUpCTA'
+      - if defined?(text_link_text)
+        = link_to "#{text_link_text}", cms_employer? ? auth_url('login', auth_employer): auth_url('login'), class: 'link login trackable', id: 'stickyFooterLoginCTA'

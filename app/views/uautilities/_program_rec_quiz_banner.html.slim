@@ -1,0 +1,12 @@
+.flex.flex--wrap.new-banner.textAlign--center.padding--y_32.padding--x_16
+  - if !icon.blank?
+    section.flex.flexDirection--column.flexJustify--center
+      = image_tag(ix_image_url(icon), class: 'icon display--inline margin--0')
+  .headline.flexJustify--center
+    - header.split("_").each do |phrase|
+      - if phrase.include?("|")
+        h4.display--inline
+          = link_to phrase.delete("|"), cta_link, class: 'link trackable', id: cta_id
+      - else
+        h4.display--inline
+          | #{phrase}

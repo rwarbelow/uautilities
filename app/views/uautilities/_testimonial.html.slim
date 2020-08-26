@@ -1,0 +1,9 @@
+a name=section_name
+h2
+  | #{header}
+aside.fontWeight--400
+  = image_tag(quote_icon, class: 'open-quote')
+  = html_for_quote(sub_copy).html_safe
+  p.text-gray.byline
+    | #{byline}
+    = image_tag(quote_icon, class: 'close-quote')

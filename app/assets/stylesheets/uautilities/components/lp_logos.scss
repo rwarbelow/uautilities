@@ -1,0 +1,44 @@
+.template1 {
+  .lp-logos {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      @media (max-width: 600px) {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: -24px -36px;
+      }
+      @media (max-width: 500px) {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: -24px -24px;
+      }
+      // @include media-query('sm', 'max-width') {
+      //   justify-content: center;
+      //   flex-wrap: wrap;
+      //   margin: -24px
+      // }
+    .lp-single-logo {
+      max-width: 12%;
+      max-height: 56px;
+      margin: 5px;
+      @media (max-width: 600px) {
+        min-width: 20%;
+        margin: 12px 36px;
+      }
+      @media (max-width: 500px) {
+        min-width: 20%;
+        margin: 12px 24px;
+      }
+      // @include media-query('sm', 'max-width') {
+      //   max-width: 20%;
+      //   margin: 12px 24px;
+      // }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.textAlign--left
+  .list-content
+    - if !header.blank?
+      - if partial.include?('header')
+        = styled_headline(header, tag='h3', local_assigns).html_safe
+      - else 
+        = styled_headline(header, tag='h2', local_assigns).html_safe
+    .subheader
+      p
+        | #{sub_copy}
+    aside
+      - list_items.each_with_index do | item, index |
+        .flex.padding--y_8.text-black-base
+          - if item[:icon_type] == 'icon'
+            .flexDirection--column
+              = react_component('Icons', name: item[:icon], size: 24, className: item[:icon_class])
+          - else
+            .number.flexDirection--column
+              b.fontWeight--900.black-text
+                = "##{index+1}"
+          .text-black-base.position--relative.padding--left_8
+            = item[:description]
+            - if item[:sub_description].present?
+              .subdescription.padding--top_4
+                | #{item[:sub_description].html_safe}
+      - if !local_assigns.fetch(:cta_link, '').empty?
+        div.margin--top_32 class='md:margin--top_40'
+          = link_to cta_text, cms_url(cta_link), class: 'button trackable', id: "#{section_name}_cta".camelcase

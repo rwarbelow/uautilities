@@ -1,0 +1,11 @@
+= image_tag(logo, class: 'logo edProgramLogo') if defined?(logo) && !logo.blank?
+- if defined?(header) && !header.blank?
+  - if local_assigns.fetch(:section_class, nil)
+    h3.margin--bottom_8 class= 'md:margin--bottom_40'
+      | #{header}
+  - else
+      h2.margin--bottom_8 
+        | #{header}
+- if !sub_copy.blank?
+  p.text-gray.margin--auto
+      | #{sub_copy}

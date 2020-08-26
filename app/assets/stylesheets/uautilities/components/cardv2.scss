@@ -1,0 +1,266 @@
+// Utilizing custom breakpoints for tablet to correctly stack cards
+.template1 {
+  .card-container {
+    max-width: 1600px;
+    padding: 0rem 1rem;
+    flex-grow: 3;
+    flex-shrink: 1;
+    margin: auto;
+    text-align: left;
+    @include media-query('md', 'min-width') {
+      text-align: center;
+      padding: 0 4rem;
+    }
+    h2.subsection {
+      font-size: 20px !important;
+      line-height: 1.5rem;
+      @include media-query('md', 'min-width') {
+      font-size: 24px !important;
+      }
+    }
+    .logo {
+      max-height: 40px;
+      margin: 0 0 1rem;
+    }
+  }
+  .three-card {
+    @media only screen and (max-width: 1024px) { 
+      .multi-card:nth-child(1) { order: 2; }
+      .multi-card:nth-child(2) { order: 1; }
+      .multi-card:nth-child(3) { order: 3; }
+    }
+  }
+  .program-options {
+    padding-bottom: 3rem;
+    .multi-card:nth-last-child(n+3), .multi-card:nth-last-child(n+3) ~ * {
+      @media only screen and (min-width: 1024px) {
+        margin: 7rem 1rem 0rem;
+      }      
+    }
+    
+    .icon-spacing:not(:first-child):not(:last-child) {
+      @media only screen and (min-width: 1024px) {
+        margin-top: 4.5rem;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+      }
+    }
+    .middle-multi-card {
+        box-shadow: 0 3px 9px 0 rgba(89,89,89,0.23);
+      .middle-icon-container {
+        margin: 0 -1rem 1rem;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        height: 4.5rem;
+        @media only screen and (min-width: 1024px) {
+          margin: 1.25rem -2rem 1.625rem;
+          height: 6rem;
+        }
+      }
+      .icon {
+        margin: -5rem 0 0 1rem;
+        padding-top: 0.75rem;
+        width: 45px;
+        @media only screen and (min-width: 1024px) {
+          padding-top: 1rem;
+          width: 64px;
+          margin: -5rem auto 0.75rem auto;
+        }
+      }
+    }
+  }
+  .cards {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 32px;
+    @media only screen and (min-width: 1024px) {
+      flex-direction: row;
+      margin-top: 8px;
+    }
+  }
+  .info-card {
+    box-shadow: 1px 2px 6px 2px rgba(48,48,48,0.06);
+    p {
+      font-size: 1rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .card-cta {
+      position: absolute;
+      bottom: 1.5rem;
+      @include media-query('md', 'min-width') {
+        bottom: 2rem;
+      }
+    }
+    .sub-copy {
+      margin-top: 4px;
+      @include media-query('md', 'min-width') {
+        margin-top: 8px;
+      }
+    }
+    .card-headline {
+      font-size: 20px;
+      font-weight: 600;
+      display: inline-block;
+      text-align: left !important;
+      @include media-query('md', 'min-width') {
+        text-align: center;
+      }
+    }
+    
+  }
+  .multi-card {
+    width: 100%;
+    border-radius: 3px;
+    padding: 2rem 2rem 1.5rem;
+    margin: 1rem auto 0.5rem;
+    .icon-container {
+      height: 3rem;
+      @media only screen and (min-width: 1024px) {
+        height: 5rem;
+      }
+    }
+    .middle-icon {
+      margin: 0;
+      width: 45px;
+      @media only screen and (min-width: 1024px) {
+        width: 64px;
+        margin: 0rem auto 0.75rem auto;
+      }
+    }
+    .icon {
+      img {
+        width: 48px;
+      }
+      margin: -3rem 0 0 0;
+      width: 45px;
+      @media only screen and (min-width: 1024px) {
+        img {
+          height: 64px;
+          width: 100%;
+        }
+        height: 64px;
+        width: 100%;
+        margin: -3.75rem auto 0.75rem auto;
+      }
+    }
+    .cta {
+      height: 2.75rem;
+      padding-top: 0.5rem;
+    }
+    .wrap-text {
+      width: 80%;
+    }
+    aside {
+      @media only screen and (min-width: 1024px) {
+        max-width: 24rem;
+        margin: 0 auto;
+      }  
+    }
+    @include media-query('md', 'min-width') {
+      margin: 0.5rem 1rem;
+    }
+    @media only screen and (max-width: 1024px) {
+      max-width: 100%;
+      padding: 1.5rem 1rem;
+    }
+  }
+  .icon-spacing {
+    padding: 1.5rem 1rem 0.5rem;
+    margin: 1.5rem auto;
+    @media only screen and (min-width: 1024px) {
+      margin: 4rem 1rem 0rem;
+      padding: 1.5rem 2rem 1.5rem;
+    }
+  }
+  .chevronRightSvg {
+    position: absolute;
+    top: 50%;
+    transform: translate(0px, -50%);
+  }
+}
+
+.list {
+  @include media-query('md', 'min-width') {
+    margin-top: 7rem !important;
+  }
+}
+
+.single-offering-container {
+  padding: 1.5rem;
+  flex-direction: column-reverse;
+  div {
+    flex-basis: auto;
+  }
+  .hide-desktop {
+    width: 100%;
+    padding-top: 24px;
+    margin-bottom: -1rem;
+    object-fit: cover;
+    @include media-query('md', 'min-width') {
+      display: none;
+    }
+  }
+  .hide-stacked {
+    @include media-query('md', 'max-width') {
+      display: none;
+    }
+  }
+  .image {
+    background-size: cover;
+    background-position: center center;
+    @include media-query('md', 'max-width') {
+      min-height: 400px;
+      background-position: center top; 
+    }
+    @include media-query('sm', 'max-width') {
+      min-height: 200px;
+      background-position: center top;
+    }
+  }
+  @include media-query('md', 'min-width') {
+    padding: 72px;
+    flex-direction: row;
+  }
+  .floating-icon {
+    @include media-query('md', 'max-width') {
+      margin: 1.5rem auto;
+    }
+    .icon {
+      @include media-query('md', 'max-width') {
+        margin: -3rem 0rem 0.5rem;
+        width: 45px;
+      }
+    }
+  }
+  .single-offering-card {
+    border-radius: 0px 3px 3px 0px;
+    padding-top: 1.5rem;
+    .icon {
+      width: 45px;
+      @media only screen and (min-width: 1024px) {
+        width: 64px;
+      }
+      margin-bottom: 10px;
+    }
+    .card-text-content {
+      padding-left: 1rem;
+      padding-right: 1.5rem;
+    }
+    .partner-logo {
+      margin: 0 auto;
+      height: 48px;
+      img {
+        height: 48px;
+      }
+      @include media-query('md', 'min-width') {
+        margin-left: auto !important;
+        margin-right: 0;
+      }
+    }
+    @include media-query('md', 'min-width') {
+      padding: 2rem 0rem 1.5rem 3rem;
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+= styled_headline(header, tag='h1', local_assigns).html_safe
+p *{:class => [local_assigns.fetch(:text_color, '')]}
+  | #{sub_copy}
+- if !cta_link.blank?
+  div.margin--top_16.margin--bottom_48 class='md:margin--y_16'
+    = link_to cta_text, cms_url(cta_link), class: "button trackable #{local_assigns.fetch(:cta_style, '')}", id: "#{cta_id}"

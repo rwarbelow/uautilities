@@ -1,0 +1,80 @@
+.base-modal {
+  &.ReactModal__Content {
+    max-width: 59.25rem !important; // 948px;
+    margin-top: 5rem;
+    padding: 3.5rem;
+    @media (max-width: 1028px) {
+      width: 80% !important;
+    }
+    @include media-query('md', 'max-width') {
+      width: 100% !important;
+      border-radius: 0;
+      height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      margin-top: 0px;
+      text-align: center;
+    }
+    .modal-content {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center; 
+      @include media-query('md', 'min-width') {
+        flex-direction: row;
+      }
+      .image-content {
+        line-height: 0;
+      }
+      .modal-text {
+        color: #636363;
+        font-size: 14px;
+        margin-top: 1.5rem;
+        a {
+          color: #636363;
+          font-weight: 100;
+          text-decoration: underline;
+        }
+      }
+    }
+    .spacing {
+      width: 3.5rem;
+    }
+    [class*="modal-close-button--"] {
+      z-index: 1;
+    }
+  }
+  h1 {
+    margin-bottom: 2rem;
+  }
+  .cta-button {
+    width: 16.875rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    @include media-query('md', 'max-width') {
+      margin: 1.5rem auto;
+      display: block;
+    }
+  }
+
+  .cta-button:last-of-type {
+    margin-bottom: 0px;
+  }
+  img {
+    margin-bottom: 1rem;
+    max-width: 16.875rem;
+    @include media-query('md', 'min-width') {
+      max-width: 24.375rem;
+      margin-bottom: 0px;
+    }
+    @media (max-width: 1028px) {
+      width: 18.75rem !important;
+      padding-left: 1.5rem;
+    }
+    @include media-query('md', 'max-width') {
+      padding: 0px;
+    }
+  }
+}

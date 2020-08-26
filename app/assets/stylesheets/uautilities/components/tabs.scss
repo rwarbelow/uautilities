@@ -1,0 +1,22 @@
+.template1 {
+  .card--ZVryk {
+    box-shadow: 0 0px 0px 0 rgba(99, 99, 99, 0.23);
+    padding: 0;
+  }
+  .tabNavWrapper--fy4zs {
+    margin: 0;
+    padding: 0 2rem;
+  }
+  .tabs-desktop {
+    display: none;
+    @include media-query('md', 'min-width') {
+      display: block;
+    }
+  }
+  .tabs-mobile {
+    display: block;
+    @include media-query('md', 'min-width') {
+      display: none;
+    }
+  }
+}

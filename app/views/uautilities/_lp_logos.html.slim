@@ -1,0 +1,6 @@
+a name=section_name 
+div *{:class => [local_assigns.fetch(:background_styles, '')]}
+  section.lp-logos
+    - logos.each do |logo|
+      div.lp-single-logo 
+        = image_tag(logo[:image_url])

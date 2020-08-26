@@ -1,0 +1,26 @@
+.info-card.multi-card.bg-white.position--relative *{:class => ["#{card[:list_items].empty? ? 'textAlign--left' : 'md:textAlign--center'}", "#{!card[:icon].blank? ? 'icon-spacing' : ''}", "#{card_length == 3 && cta_id.split("Card").last.to_i == 2 &&  card_type == 'program-options' ? 'middle-multi-card' : 'icon-container'}"]}
+  - if !card[:icon].blank?
+    div *{:class => ["#{card_length == 3 && cta_id.split("Card").last.to_i == 2 && card_type == 'program-options' ? 'middle-icon-container' : 'icon-container'}"]}
+      figure.icon
+        = image_tag(card[:icon])
+  .card-headline
+    - if card[:list_items].empty? 
+      = styled_headline(card[:header]).html_safe
+    -else 
+      = styled_headline(card[:header], 'h3').html_safe
+  - if !card[:list_items].empty?
+    br
+    p.sub-copy
+      = card[:body]
+    hr
+    = render partial: '/pages/v2/shared/list', locals: {header: '', sub_copy: '', list_items: card[:list_items], cta_link: card[:cta_link], icon_list: true}
+  - else
+    .text-gray.margin--y_8 class='md:margin--y_16'
+      = card[:sub_copy]  
+  - if !card[:cta_link].blank?
+    .cta.flexDirection--column.display--inlineBlock
+      - cta_text = signed_in? && !card[:cta_text_logged_in].blank? ? card[:cta_text_logged_in] : card[:cta_text]
+      - cta_link  = signed_in? && !card[:cta_link_logged_in].blank? ? cms_url("#{card[:cta_link_logged_in]}#{card[:cta_url_anchor_tag]}") : cms_url("#{card[:cta_link]}#{card[:cta_url_anchor_tag]}")
+      = link_to cta_link, :id => cta_id,  :class => 'link card-cta trackable flex flexItems--center wrap-text' do
+        = cta_text
+        = react_component('Icons', name: 'ChevronRight', size: 26, className: 'flex chevronRightSvg margin--right_16')

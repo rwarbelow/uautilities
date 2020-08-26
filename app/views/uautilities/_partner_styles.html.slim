@@ -1,0 +1,47 @@
+- base = @page.colors.hero_background_color
+- card = @page.colors.feature_card_background_color
+- feature = @page.colors.feature_color
+- opacity = @page.colors.background_opacity
+- button = @page.colors.button_color
+- hover = lighten_or_darken(button, -25)
+
+css:
+  .base-bg { background-color: #{base}; }
+  .feature-bg { background-color: #{feature}; }
+  .button {
+    background-color: #{button};
+    color: $color-white-base;
+  }
+  .button:hover {
+    background-color: #{hover};
+    color:  $color-white-base;
+  }
+  .link {
+    color: #000000;
+  }
+  .link:hover, .link:active {
+    color: #{hover};
+  }
+  svg:hover use {
+    fill: #{hover};
+  }
+  .sticky-nav {
+    .login {
+      color: #{button};
+    }
+    .login:hover {
+      color: #{hover};
+    }
+  }
+  .overlay {
+    background-color: rgba(255,255,255,#{opacity});
+  }
+  .middle-icon-container {
+    background-color: #{card};
+  }
+  
+  svg {
+    circle {
+      fill: #000000;
+    }
+  }

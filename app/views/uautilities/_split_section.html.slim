@@ -1,0 +1,11 @@
+a name=section_name
+div *{:class => [local_assigns.fetch(:background_styles, '')]}
+  section.split.flex.flex--wrap.flexItems--center *{:class => [local_assigns.fetch(:direction, ''), layout_class]}
+    figcaption.width--full.flex.flexDirection--column.flexJustify--center.padding--top_24 class="md:padding--top_0 #{ 'equal-split' if section_name != :hero}"
+      = render partial: "pages/v2/shared/#{content_type}", locals: local_assigns
+    main.width--full
+      - if local_assigns.fetch(:video_url, '').present?
+        .video
+          iframe id='videoPlayButton' src="#{video_url}" frameborder="0" allowfullscreen
+      - else
+        = image_tag(image, class: image_class)

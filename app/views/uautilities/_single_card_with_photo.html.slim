@@ -1,0 +1,24 @@
+a name=section_name
+section.outer-header.margin--bottom_36
+  h2.margin--bottom_8
+    = header
+  p.gray-text
+    = sub_copy
+.bg-black-lighten-97
+  section.single-offering-container.flex.flexDirection--column class="md:flexDirection--row"
+    div.width--full.image.hide-stacked style="background-image: url(#{image});"
+    div.width--full.info-card.single-offering-card.floating-icon.bg-white.position--relative
+      div.card-text-content 
+        .icon
+          = image_tag(icon)
+        .card-headline
+          = styled_headline(card_header, 'h3').html_safe
+        br 
+        .margin--top_8 
+          = card_sub_copy
+        = render partial: '/pages/v2/shared/list', locals: {header: '', sub_copy: '', list_items: list_items, icon_list: icon_list}
+        - if local_assigns.fetch(:logo, nil).present?
+          div.flex
+            div.partner-logo
+              = image_tag(logo, class: 'card-partner-logo')
+      = image_tag(image, class: 'hide-desktop')

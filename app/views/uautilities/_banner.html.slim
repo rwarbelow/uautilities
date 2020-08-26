@@ -1,0 +1,8 @@
+a name=section_name
+.banner *{:class => [local_assigns.fetch(:background_styles)]}
+  div *{:class => [local_assigns.fetch(:banner_type)]}
+    .banner-align.flex.flexJustify--center class="md:textAlign--center"
+      .icon
+        = react_component('Icons', name: icon, class: 'fontWeight--800', color: banner_type == 'body-banner' && @page ? @page.colors.button_color : local_assigns.fetch(:icon_color, '#000000'))
+      .headline.inline-icon
+        = styled_headline(header, 'div', local_assigns).html_safe

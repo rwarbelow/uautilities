@@ -1,0 +1,7 @@
+a name=section_name
+div *{:class => [local_assigns.fetch(:background_styles, '')]}
+  section
+    .boxShadow--sm
+      .padding--16 class='md:padding--x_32 md:padding--top_32 md:padding--bottom_24'
+        h2 Your education benefit
+      = react_component('Tabs', {slides: local_assigns[:slides]})
