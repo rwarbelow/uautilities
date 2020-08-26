@@ -3,6 +3,9 @@ module Uautilities
     isolate_namespace Uautilities
     config.assets.paths << File.expand_path("../../assets/stylesheets", __FILE__)
     config.assets.paths << File.expand_path("../../assets/javascripts", __FILE__)
-    config.assets.precompile << %w( uautilities.css )
+    
+    initializer "uautilities.assets.precompile" do |app|
+      app.config.assets.precompile += %w( application.scss )
+    end
   end
 end
