@@ -13,7 +13,7 @@
     p.sub-copy
       = card[:body]
     hr
-    = render partial: '/pages/v2/shared/list', locals: {header: '', sub_copy: '', list_items: card[:list_items], cta_link: card[:cta_link], icon_list: true}
+    = render :file => "uautilities/_list.html.slim", locals: {header: '', sub_copy: '', list_items: card[:list_items], cta_link: card[:cta_link], icon_list: true}
   - else
     .text-gray.margin--y_8 class='md:margin--y_16'
       = card[:sub_copy]  

@@ -16,7 +16,7 @@ section.outer-header.margin--bottom_36
         br 
         .margin--top_8 
           = card_sub_copy
-        = render partial: '/pages/v2/shared/list', locals: {header: '', sub_copy: '', list_items: list_items, icon_list: icon_list}
+        = render :file => "uautilities/_list.html.slim", locals: {header: '', sub_copy: '', list_items: list_items, icon_list: icon_list}
         - if local_assigns.fetch(:logo, nil).present?
           div.flex
             div.partner-logo

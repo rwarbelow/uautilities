@@ -5,5 +5,4 @@ section.outer-header.padding--x_16.padding--bottom_32 class='md:padding--bottom_
   p.text-gray
     = section_sub_copy
 div.margin--bottom_40 class='md:margin--bottom_72'
-  = render partial: 'pages/v2/shared/split_section',
-  locals: local_assigns
+  = render :file => "uautilities/_split_section.html.slim", locals: local_assigns

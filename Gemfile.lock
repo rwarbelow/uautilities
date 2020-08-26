@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    uautilities (0.1.0)
+    uautilities (0.1.3)
       rails (~> 6.0.0, >= 6.0.0)
 
 GEM

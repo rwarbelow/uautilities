@@ -1,15 +1,15 @@
 a name=section_name
 section.outer-header.padding--x_16.margin--bottom_36
   - if local_assigns.fetch(:header_type, nil) == 'external'
-    = render partial: '/pages/v2/shared/card_container_header', locals: local_assigns
+    = render :file => "uautilities/_card_container_header.html.slim", locals: local_assigns
 div.margin--bottom_40 class='md:margin--bottom_72'
   div *{:class => [local_assigns.fetch(:background_styles, '')]}
     .card-container.inner-header *{:class => [local_assigns.fetch(:container_spacing, '')]}
       - if local_assigns.fetch(:header_type, nil) == 'internal'
-        = render partial: '/pages/v2/shared/card_container_header', locals: local_assigns
+        = render :file => "uautilities/_card_container_header.html.slim", locals: local_assigns
       div.flex.cards *{:class => [local_assigns.fetch(:card_type, ''), "#{card_length > 2 ? 'three-card' : ''}"]}
         - cards.each_with_index do | card, index |
-          = render partial: '/pages/v2/shared/card', locals: {card: card, \
+          = render :file => "uautilities/_card.html.slim", locals: {card: card, \
                                                               cta_id: "#{section_name}_card_#{index+1}".camelcase, \
                                                               card_align: local_assigns[:card_align], \
                                                               card_class: local_assigns[:card_class], \

@@ -2,4 +2,4 @@ a name=section_name
 .testimonial-background style="background-image: url(#{image})"
   .overlay
     section.testimonial-full
-      = render partial: '/pages/v2/shared/testimonial', locals: local_assigns
+      = render :file => "uautilities/_testimonial.html.slim", locals: local_assigns
